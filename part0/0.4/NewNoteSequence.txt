@@ -1,0 +1,24 @@
+title New Note Sequence
+
+Browser->Server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note
+Server --> Browser: HTTP status code 302, Redirect to /notes
+Browser -> Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+Server --> Browser: text/html
+Browser -> Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+Server -->Browser: text/css, main.css
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.js
+Server --> Browser: application/javascript, main.js
+
+note over Browser:
+Browser starts executing js-code
+that requests JSON data from server 
+end note
+
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+Server-->Browser: {content: "HTML is easy", date: "2019-05-23T17:30:31.098Z"}, …]
+
+note over Browser:
+Browser executes the event handler
+that renders notes to display
+end note
+
